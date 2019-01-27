@@ -1,5 +1,12 @@
 # IDE :
 # -----
+# - [Eclipse]
+.settings/
+.metadata/
+target/
+.project
+.classpath
+
 # - [IntelliJ]
 .idea/
 *.iml
@@ -8,3 +15,6 @@
 # -----------
 # - [Scala]
 out/
+**/lib_managed/jars/
+# - SBT
+project/
