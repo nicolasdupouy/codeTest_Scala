@@ -3,3 +3,8 @@
 # - [IntelliJ]
 .idea/
 *.iml
+
+# Languages :
+# -----------
+# - [Scala]
+out/
