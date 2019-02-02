@@ -12,7 +12,7 @@ object ReadFile extends App {
     for (line <- lines) {
       val numSpaces = maxWidth - widthOfLength(line)
       val padding = " " * numSpaces
-      println(padding + line.length + " | " + line)
+      println(s"$padding ${line.length} | $line")
     }
   }
   else
