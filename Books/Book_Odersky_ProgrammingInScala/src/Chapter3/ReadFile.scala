@@ -19,13 +19,12 @@ object ReadFile extends App {
     Console.err.println("Please enter filename")
 
 
-  def widthOfLength(s: String) = s.length.toString.length
-
   def maxLength(lines: List[String]): Int = {
-    var maxWidth = 0
-    for (line <- lines)
-      maxWidth = maxWidth.max(widthOfLength(line))
-
-    return maxWidth
+    val longestLine = lines.reduceLeft(
+      (a, b) => if (a.length > b.length) a else b
+    )
+    widthOfLength(longestLine)
   }
+
+  def widthOfLength(s: String): Int = s.length.toString.length
 }
