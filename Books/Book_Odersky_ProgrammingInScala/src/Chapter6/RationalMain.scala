@@ -20,4 +20,7 @@ object RationalMain extends App {
   println(s"max of $oneHalf and $twoThirds is ${oneHalf.max(twoThirds)}")
 
   println(s"Rational(3) = ${new Rational(3)}")
+
+  val sixtySixoverFortyTwo = new Rational(66, 42)
+  println(s"66/42 = $sixtySixoverFortyTwo")
 }

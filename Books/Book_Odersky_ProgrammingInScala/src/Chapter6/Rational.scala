@@ -2,8 +2,10 @@ package Chapter6
 
 class Rational(n: Int, d: Int) {
   require(d != 0)
-  val numerator: Int = n
-  val denominator: Int = d
+
+  private val greatCommonDivisor = gcd(n, d)
+  val numerator: Int = n / greatCommonDivisor
+  val denominator: Int = d / greatCommonDivisor
 
   // Auxiliary constructor
   def this(n: Int) = this(n, 1)
@@ -21,4 +23,7 @@ class Rational(n: Int, d: Int) {
 
   def max(that: Rational): Rational =
     if (this lessThan that) that else this
+
+  private def gcd(a: Int, b: Int): Int =
+    if (b == 0) a else gcd(b, a % b)
 }
