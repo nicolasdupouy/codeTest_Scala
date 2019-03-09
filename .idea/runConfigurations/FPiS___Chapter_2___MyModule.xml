@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="FPiS - Chapter 2 - MyModule" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="MyModule" />
+    <module name="Book_Functional Programming in Scala" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
