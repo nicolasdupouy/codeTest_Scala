@@ -18,4 +18,6 @@ object RationalMain extends App {
 
   println(s"$oneHalf is less than $twoThirds is ${oneHalf.lessThan(twoThirds)}")
   println(s"max of $oneHalf and $twoThirds is ${oneHalf.max(twoThirds)}")
+
+  println(s"Rational(3) = ${new Rational(3)}")
 }
