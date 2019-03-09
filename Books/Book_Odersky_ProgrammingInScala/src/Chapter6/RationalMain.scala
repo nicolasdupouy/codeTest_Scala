@@ -1,24 +1,21 @@
 package Chapter6
 
 object RationalMain extends App {
-  val x = new Rational(1 , 3)
+  val x = new Rational(1, 3)
   val y = new Rational(5, 7)
 
-  val z1 = x.add(y)
-  val z2 = x add y
+  val z = x + y
 
-  println("z1 = " + z1)
-  println("z2 = " + z2)
+  println(s"z = $z")
+  println()
 
   val oneHalf = new Rational(1, 2)
   val twoThirds = new Rational(2, 3)
 
-  val oneHalfPlusTwoThirds = oneHalf add twoThirds
-  println(oneHalfPlusTwoThirds)
-
-  println(s"$oneHalf is less than $twoThirds is ${oneHalf.lessThan(twoThirds)}")
+  println(s"$oneHalf + $twoThirds = ${oneHalf + twoThirds}")
+  println(s"$oneHalf < $twoThirds is ${oneHalf < twoThirds}")
   println(s"max of $oneHalf and $twoThirds is ${oneHalf.max(twoThirds)}")
-
+  println()
   println(s"Rational(3) = ${new Rational(3)}")
 
   val sixtySixoverFortyTwo = new Rational(66, 42)
