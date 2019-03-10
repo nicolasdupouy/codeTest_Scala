@@ -1,7 +1,6 @@
 package Chapter7
 
 import java.io.File
-import scala.collection.mutable.Set
 
 object Filter extends App {
 
@@ -9,14 +8,11 @@ object Filter extends App {
   val scalaFiles = getScalaFiles(files)
   scalaFiles.foreach(println)
 
-  private def getScalaFiles(files: Array[File]): Set[File] = {
-    val allFiles = Set[File]()
+  private def getScalaFiles(files: Array[File]): Array[File] = {
     for (
       file <- files
       if file.isFile
       if file.getName.endsWith(".scala")
-    ) allFiles += file
-
-    allFiles
+    ) yield file
   }
 }
