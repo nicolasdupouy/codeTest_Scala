@@ -8,6 +8,9 @@ object Filter extends App {
   val scalaFiles = getScalaFiles(files)
   scalaFiles.foreach(println)
 
+  val greppedLines = grep(".*println.*")
+  greppedLines.foreach(println)
+
   private def getScalaFiles(files: Array[File]): Array[File] = {
     for (
       file <- files
@@ -15,4 +18,15 @@ object Filter extends App {
       if file.getName.endsWith(".scala")
     ) yield file
   }
+
+  private def fileLines(file: File) =
+    scala.io.Source.fromFile(file).getLines().toList
+
+  private def grep(pattern: String) =
+    for (
+      file <- files
+      if file.getName.endsWith(".scala");
+      line <- fileLines(file)
+      if line.trim.matches(pattern)
+    ) yield file + ":" + line.trim
 }
