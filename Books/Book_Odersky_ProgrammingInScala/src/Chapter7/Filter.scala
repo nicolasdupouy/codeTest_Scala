@@ -26,7 +26,8 @@ object Filter extends App {
     for (
       file <- files
       if file.getName.endsWith(".scala");
-      line <- fileLines(file)
-      if line.trim.matches(pattern)
-    ) yield file + ":" + line.trim
+      line <- fileLines(file);
+      trimmed = line.trim
+      if trimmed.matches(pattern)
+    ) yield file + ":" + trimmed
 }
