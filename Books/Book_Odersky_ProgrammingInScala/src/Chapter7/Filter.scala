@@ -23,11 +23,11 @@ object Filter extends App {
     scala.io.Source.fromFile(file).getLines().toList
 
   private def grep(pattern: String) =
-    for (
+    for {
       file <- files
-      if file.getName.endsWith(".scala");
-      line <- fileLines(file);
+      if file.getName.endsWith(".scala")
+      line <- fileLines(file)
       trimmed = line.trim
       if trimmed.matches(pattern)
-    ) yield file + ":" + trimmed
+    } yield file + ":" + trimmed
 }
