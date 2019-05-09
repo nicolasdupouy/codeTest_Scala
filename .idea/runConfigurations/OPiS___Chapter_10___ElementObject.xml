@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="OPiS - Chapter 10 - ElementObject" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="Chapter10.ElementObject" />
+    <option name="MAIN_CLASS_NAME" value="Chapter10.ElementMain" />
     <module name="Book_Odersky_ProgrammingInScala" />
     <extension name="coverage">
       <pattern>

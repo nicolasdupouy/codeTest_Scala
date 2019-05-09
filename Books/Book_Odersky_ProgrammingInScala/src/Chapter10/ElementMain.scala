@@ -1,6 +1,6 @@
 package Chapter10
 
-object ElementObject extends App {
+object ElementMain extends App {
 
   val e1: Element = new ArrayElement(Array("hello", "friend"))
   val e2: Element = new LineElement("Hello")
