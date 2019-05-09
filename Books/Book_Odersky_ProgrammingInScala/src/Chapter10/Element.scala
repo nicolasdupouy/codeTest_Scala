@@ -3,11 +3,14 @@ package Chapter10
 abstract class Element {
   def contents: Array[String]
 
+
+  override def toString: String = contents mkString "\n"
+
   /* Page 186: The 2 followings can be define as parameterless methods (def) or fields (val)
-     It is equivalent from a caller's point of view.
-     The only difference is that field accesses might be slightly faster than method invocations bacause
-     the field values are pre-computed when the class is initialized, instead of being computed on each method call.
-  */
+       It is equivalent from a caller's point of view.
+       The only difference is that field accesses might be slightly faster than method invocations bacause
+       the field values are pre-computed when the class is initialized, instead of being computed on each method call.
+    */
   /* Also, by convention (page 187):
     It is encouraged in Scala to define methods that take no parameters and have no side effects as parameterless methods
     (i.e., leaving off the empty parentheses).
