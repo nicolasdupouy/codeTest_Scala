@@ -15,6 +15,17 @@ abstract class Element {
     because invocations of that method would then look like a field selection.
     So your clients might be surprised to see side effects.
    */
-  val height: Int = contents.length
-  val width: Int = if (height == 0) 0 else contents(0).length
+  // Nota Bene: Use "val" for height and width here is dangerous because it uses an undefined "contents"
+  def height = contents.length
+  def width =
+    if (height == 0) 0 else contents(0).length
+
+  def above(that: Element) =
+    new ArrayElement(this.contents ++ that.contents)
+
+  def beside(that: Element) =
+    new ArrayElement(
+      for ((line1, line2) <- this.contents zip that.contents)
+        yield line1 + line2
+    )
 }
