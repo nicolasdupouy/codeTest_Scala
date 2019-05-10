@@ -5,8 +5,6 @@ import Chapter10.Element.makeElement
 abstract class Element {
   def contents: Array[String]
 
-  override def toString: String = contents mkString "\n"
-
   /* Page 186: The 2 followings can be define as parameterless methods (def) or fields (val)
        It is equivalent from a caller's point of view.
        The only difference is that field accesses might be slightly faster than method invocations bacause
@@ -21,17 +19,42 @@ abstract class Element {
    */
   // Nota Bene: Use "val" for height and width here is dangerous because it uses an undefined "contents"
   def height: Int = contents.length
+
   def width: Int =
     if (height == 0) 0 else contents(0).length
 
-  def above(that: Element) =
-    makeElement(this.contents ++ that.contents)
+  def above(that: Element) = {
+    val this1 = this widen that.width
+    val that1 = that widen this.width
+    makeElement(this1.contents ++ that1.contents)
+  }
 
-  def beside(that: Element) =
+  def beside(that: Element) = {
+    val this1 = this heighten that.height
+    val that1 = that heighten this.height
     makeElement(
-      for ((line1, line2) <- this.contents zip that.contents)
+      for ((line1, line2) <- this1.contents zip that1.contents)
         yield line1 + line2
     )
+  }
+
+  def widen(w: Int): Element =
+    if (w <= width) this
+    else {
+      val left = makeElement(' ', (w - width) / 2, height)
+      val right = makeElement(' ', w - width - left.width, height)
+      left beside this beside right
+    }
+
+  def heighten(h: Int): Element =
+    if (h <= height) this
+    else {
+      val top = makeElement(' ', width, (h - height) / 2)
+      val bottom = makeElement(' ', width, h - height - top.height)
+      top above this above bottom
+    }
+
+  override def toString: String = contents mkString "\n"
 }
 
 object Element {
