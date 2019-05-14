@@ -1,10 +1,10 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="OPiS - Chapter 10 - ElementObject" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="Chapter10.ElementMain" />
+  <configuration default="false" name="OPiS - Chapter 12 - RationalMain" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="Chapter12.orderedtrait.RationalMain" />
     <module name="Book_Odersky_ProgrammingInScala" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="Chapter10.*" />
+        <option name="PATTERN" value="Chapter12.orderedtrait.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>
