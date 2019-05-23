@@ -22,4 +22,4 @@ Books/**/*.iml
 out/
 **/lib_managed/jars/
 # - SBT
-project/
+project/target/
