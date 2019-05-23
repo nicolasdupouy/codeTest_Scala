@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="run SBT (Main)" type="SbtRunConfiguration" factoryName="sbt Task">
+    <setting name="tasks" value="~run" />
+    <setting name="vmparams" value="-Xms512M -Xmx1024M -Xss1M -XX:+CMSClassUnloadingEnabled" />
+    <setting name="workingDir" value="$PROJECT_DIR$/Books/Book_Odersky_ProgrammingInScala" />
+    <method v="2" />
+  </configuration>
+</component>
