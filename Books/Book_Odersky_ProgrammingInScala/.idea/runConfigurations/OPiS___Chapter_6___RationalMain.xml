@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="OPiS - Chapter 6 - RationalMain" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="Chapter6.RationalMain" />
-    <module name="Book_Odersky_ProgrammingInScala" />
+    <module name="Odersky Book - Programming in Scala (3rd edition)" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="Chapter6.*" />

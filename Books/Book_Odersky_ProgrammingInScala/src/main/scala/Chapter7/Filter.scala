@@ -4,7 +4,7 @@ import java.io.File
 
 object Filter extends App {
 
-  val files = new File("Books/Book_Odersky_ProgrammingInScala/src/Chapter6").listFiles
+  val files = new File("src/main/scala/Chapter6").listFiles
   val scalaFiles = getScalaFiles(files)
   scalaFiles.foreach(println)
 

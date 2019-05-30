@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="OPiS - Chapter 4 - Summer" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="Chapter4.Summer" />
-    <module name="Book_Odersky_ProgrammingInScala" />
+    <module name="Odersky Book - Programming in Scala (3rd edition)" />
     <option name="PROGRAM_PARAMETERS" value="is a beautiful season !" />
     <extension name="coverage">
       <pattern>

@@ -1,8 +1,8 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="OPiS - Chapter 3 - ReadFile" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="Chapter3.ReadFile" />
-    <module name="Book_Odersky_ProgrammingInScala" />
-    <option name="PROGRAM_PARAMETERS" value="Books/Book_Odersky_ProgrammingInScala/src/Chapter3/ReadFile.scala" />
+    <module name="Odersky Book - Programming in Scala (3rd edition)" />
+    <option name="PROGRAM_PARAMETERS" value="src/main/scala/Chapter3/ReadFile.scala" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="Chapter3.*" />
