@@ -8,13 +8,10 @@ target/
 .classpath
 
 # - [IntelliJ]
-.idea/encodings.xml
-.idea/hydra.xml
-.idea/vcs.xml
+.idea/codeTest_Scala.iml
+.idea/*.xml
 Courses/**/*.iml
 Books/**/*.iml
-!Books/Book_Functional Programming in Scala/*.iml
-!Books/Book_Odersky_ProgrammingInScala/*.iml
 
 # Languages :
 # -----------
