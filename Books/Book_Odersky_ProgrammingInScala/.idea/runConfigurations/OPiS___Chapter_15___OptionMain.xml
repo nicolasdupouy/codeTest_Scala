@@ -1,0 +1,15 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="OPiS - Chapter 15 - OptionMain" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="Chapter15.OptionMain" />
+    <module name="Odersky Book - Programming in Scala (3rd edition)" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="Chapter15.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
