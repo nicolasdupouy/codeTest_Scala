@@ -1,13 +1,14 @@
 package Chapter16
 
 class InsertionSort {
-  def isort(xs: List[Int]): List[Int] = {
-    if (xs.isEmpty) Nil
-    else insert(xs.head, isort(xs.tail))
+  def isort(xs: List[Int]): List[Int] = xs match {
+    case Nil => Nil
+    case y :: ys => insert(y, isort(ys))
   }
 
-  private def insert(x: Int, xs: List[Int]): List[Int] = {
-    if (xs.isEmpty || x < xs.head) x :: xs
-    else xs.head :: insert(x, xs.tail)
+  private def insert(x: Int, xs: List[Int]): List[Int] = xs match {
+    case Nil => List(x)
+    case y :: ys => if (x <= y) x :: xs
+                    else y :: insert(x, ys)
   }
 }
