@@ -1,9 +1,9 @@
 package Chapter16
 
-class InsertionSort {
-  def isort(xs: List[Int]): List[Int] = xs match {
+class Sort {
+  def insertionSort(xs: List[Int]): List[Int] = xs match {
     case Nil => Nil
-    case y :: ys => insert(y, isort(ys))
+    case y :: ys => insert(y, insertionSort(ys))
   }
 
   private def insert(x: Int, xs: List[Int]): List[Int] = xs match {
