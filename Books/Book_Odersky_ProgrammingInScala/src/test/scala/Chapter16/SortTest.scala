@@ -4,7 +4,9 @@ import org.scalatest.{FunSpec, Matchers}
 
 class SortTest extends FunSpec with Matchers {
 
-  val sort = new Sort
+  private val sort = new Sort
+  private val intSort = sort.mergeSort((x: Int, y: Int) => x < y) _
+  private val reverseIntSort = sort.mergeSort((x: Int, y: Int) => x > y) _
 
   describe("Test insertion sort") {
     it("should sort empty list") {
@@ -22,15 +24,27 @@ class SortTest extends FunSpec with Matchers {
 
   describe("Test merge sort") {
     it("should sort empty list") {
-      sort.mergeSort((x: Int, y: Int) => x < y)(List()) should be (List())
+      intSort(List()) should be (List())
     }
 
     it("should sort (1, 2, 3) in (1, 2, 3)") {
-      sort.mergeSort((x: Int, y: Int) => x < y)(List(1, 2, 3)) should be (List(1, 2, 3))
+      intSort(List(1, 2, 3)) should be (List(1, 2, 3))
     }
 
     it("should sort (5, 2, 1, 67, 4, 3) in (1, 2, 3, 4, 5, 67)") {
-      sort.mergeSort((x: Int, y: Int) => x < y)(List(5, 2, 1, 67, 4, 3)) should be (List(1, 2, 3, 4, 5, 67))
+      intSort(List(5, 2, 1, 67, 4, 3)) should be (List(1, 2, 3, 4, 5, 67))
+    }
+
+    it("should reverse sort empty list") {
+      reverseIntSort(List()) should be (List())
+    }
+
+    it("should reverse sort (1, 2, 3) in (3, 2, 1)") {
+      reverseIntSort(List(1, 2, 3)) should be (List(3, 2, 1))
+    }
+
+    it("should reverse sort (5, 2, 1, 67, 4, 3) in (67, 5, 4, 3, 2, 1)") {
+      reverseIntSort(List(5, 2, 1, 67, 4, 3)) should be (List(67, 5, 4, 3, 2, 1))
     }
   }
 }
