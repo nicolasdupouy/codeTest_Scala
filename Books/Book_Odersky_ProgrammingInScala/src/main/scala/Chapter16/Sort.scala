@@ -12,14 +12,14 @@ class Sort {
                     else y :: insert(x, ys)
   }
 
-  def mergeSort(xs: List[Int]): List[Int] = {
+  def mergeSort[T](less: (T, T) => Boolean)(xs: List[T]): List[T] = {
 
-    def merge(xs: List[Int], ys: List[Int]): List[Int] =
+    def merge(xs: List[T], ys: List[T]): List[T] =
       (xs, ys) match {
         case (Nil, _) => ys
         case (_, Nil) => xs
         case (x :: xs1, y :: ys1) =>
-          if (x < y) x :: merge(xs1, ys)
+          if (less(x,y)) x :: merge(xs1, ys)
           else y :: merge(xs, ys1)
       }
 
@@ -27,7 +27,7 @@ class Sort {
     if (n == 0) xs
     else {
       val (left, right) = xs splitAt n
-      merge(mergeSort(left), mergeSort(right))
+      merge(mergeSort(less)(left), mergeSort(less)(right))
     }
   }
 }
