@@ -19,4 +19,18 @@ class SortTest extends FunSpec with Matchers {
       sort.insertionSort(List(5, 2, 1, 67, 4, 3)) should be (List(1, 2, 3, 4, 5, 67))
     }
   }
+
+  describe("Test merge sort") {
+    it("should sort empty list") {
+      sort.mergeSort(List()) should be (List())
+    }
+
+    it("should sort (1, 2, 3) in (1, 2, 3)") {
+      sort.mergeSort(List(1, 2, 3)) should be (List(1, 2, 3))
+    }
+
+    it("should sort (5, 2, 1, 67, 4, 3) in (1, 2, 3, 4, 5, 67)") {
+      sort.mergeSort(List(5, 2, 1, 67, 4, 3)) should be (List(1, 2, 3, 4, 5, 67))
+    }
+  }
 }
