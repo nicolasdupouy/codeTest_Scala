@@ -8,6 +8,7 @@ target/
 .classpath
 
 # - [IntelliJ]
+.idea/codeStyles
 .idea/codeTest_Scala.iml
 .idea/*.xml
 Courses/**/*.iml
