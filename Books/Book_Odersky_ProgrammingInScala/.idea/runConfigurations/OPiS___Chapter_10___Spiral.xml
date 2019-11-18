@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="OPiS - Chapter 10 - Spiral" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="Chapter10.Spiral" />
+    <module name="Odersky Book - Programming in Scala (3rd edition)" />
+    <option name="PROGRAM_PARAMETERS" value="17" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="Chapter10.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

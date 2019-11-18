@@ -1,0 +1,20 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="OPiS - Chapter 15 - ExprTest.Sealed classes with pattern matching test it" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
+    <module name="Odersky Book - Programming in Scala (3rd edition)" />
+    <setting name="path" value="Chapter15.ExprTest" />
+    <setting name="vmparams" value="" />
+    <setting name="params" value="" />
+    <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+    <setting name="searchForTest" value="Across module dependencies" />
+    <setting name="showProgressMessages" value="true" />
+    <setting name="useSbt" value="false" />
+    <setting name="useUiWithSbt" value="false" />
+    <envs />
+    <setting name="testKind" value="Test name" />
+    <setting name="path" value="Chapter15.ExprTest" />
+    <setting name="testName" value="Sealed classes with pattern matching test it" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

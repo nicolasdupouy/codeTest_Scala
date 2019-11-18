@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="OPiS - Chapter 8 - FindLongLinesMain" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="Chapter8.FindLongLines" />
+    <module name="Odersky Book - Programming in Scala (3rd edition)" />
+    <option name="PROGRAM_PARAMETERS" value="45 src/main/scala/Chapter3/ReadFile.scala" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="Chapter8.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
