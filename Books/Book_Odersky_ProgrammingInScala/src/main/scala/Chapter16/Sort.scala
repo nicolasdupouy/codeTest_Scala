@@ -12,6 +12,9 @@ class Sort {
                     else y :: insert(x, ys)
   }
 
+  def mergeSortSwapped[T](xs: List[T])(less: (T, T) => Boolean): List[T] =
+    mergeSort(less)(xs)
+
   def mergeSort[T](less: (T, T) => Boolean)(xs: List[T]): List[T] = {
 
     def merge(xs: List[T], ys: List[T]): List[T] =
