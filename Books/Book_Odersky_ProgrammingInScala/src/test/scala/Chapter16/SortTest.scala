@@ -7,8 +7,8 @@ class SortTest extends FunSpec with Matchers {
   private val sort = new Sort
   private val intSort = sort.mergeSort((x: Int, y: Int) => x < y) _
   private val reverseIntSort = sort.mergeSort((x: Int, y: Int) => x > y) _
-  private val intSortSwapped = sort.mergeSortSwapped[Int](_)(_ < _)
-  private val reverseIntSortSwapped = sort.mergeSortSwapped[Int](_)(_ > _)
+  private val intSortSwapped = sort.mergeSortSwapped[Int](_: List[Int])(_ < _)
+  private val reverseIntSortSwapped = sort.mergeSortSwapped[Int](_: List[Int])(_ > _)
 
   describe("Test insertion sort") {
     it("should sort empty list") {
