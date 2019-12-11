@@ -30,5 +30,13 @@ class ListTest extends FunSpec with Matchers {
     it("Exercice 3.2") {
       List.tail(List(1, 2, 3, 4, 5)) should be (List(2, 3, 4, 5))
     }
+
+    it("Exercice 3.3") {
+      List.setHead(9, List(1, 2, 3, 4, 5)) should be (List(9, 2, 3, 4, 5))
+    }
+
+    it("Exercice 3.4") {
+      List.drop(List(1, 2, 3, 4, 5), 3) should be (List(4, 5))
+    }
   }
 }
