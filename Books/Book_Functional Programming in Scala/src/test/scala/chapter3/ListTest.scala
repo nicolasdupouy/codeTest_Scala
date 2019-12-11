@@ -38,5 +38,10 @@ class ListTest extends FunSpec with Matchers {
     it("Exercice 3.4") {
       List.drop(List(1, 2, 3, 4, 5), 3) should be (List(4, 5))
     }
+
+    it("Exercice 3.5") {
+      List.dropWhile(List("a", "b", "Haskell", "Scala", "Kotlin"), (s: String) => s.length < 7) should be (List("Haskell", "Scala", "Kotlin"))
+      List.dropWhile(List("Haskell", "Scala", "a", "b", "Kotlin"), (s: String) => s.length > 5) should be (List("Scala", "a", "b", "Kotlin"))
+    }
   }
 }
