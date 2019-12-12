@@ -16,11 +16,21 @@ object List {
     case Cons(h, t) => h + sum(t)
   }
 
-  def product(ints: List[Int]): Int = ints match {
-    case Nil => 1
-    case Cons(0, _) => 0
+  def product(ints: List[Double]): Double = ints match {
+    case Nil => 1.0
+    case Cons(0, _) => 0.0
     case Cons(h, t) => h * product(t)
   }
+
+
+  def foldRight[A, B](as: List[A], z: B)(f: (A, B) => B): B =
+    as match {
+      case Nil => z
+      case Cons(h, t) => f(h, foldRight(t, z)(f))
+    }
+
+  def productFoldRight(nums: List[Double]): Double =
+    foldRight(nums, 1.0)(_ * _)
 
   def tail(l: List[Int]): List[Int] = l match {
     case Nil => throw new MatchError("Empty list has no tail")
@@ -46,4 +56,13 @@ object List {
     case Cons(h, t) if p(h) => dropWhile(t, p)
     case _ => l
   }
+
+  def init[A](l: List[A]): List[A] = l match {
+    case Nil => throw new MatchError("Empty list")
+    case Cons(_, Nil) => Nil
+    case Cons(h, t) => Cons(h, init(t))
+  }
+
+  def length(l: List[Int]) =
+    foldRight(l, 0)((_, acc) => acc + 1)
 }

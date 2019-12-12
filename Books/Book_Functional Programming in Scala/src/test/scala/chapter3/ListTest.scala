@@ -11,8 +11,8 @@ class ListTest extends FunSpec with Matchers {
     }
 
     it("product of List(1, 2, 3, 4) should be 24") {
-      val list123 = List(1, 2, 3, 4)
-      List.product(list123) should be(24)
+      val list123 = List(1.0, 2.0, 3.0, 4.0)
+      List.product(list123) should be(24.0)
     }
   }
 
@@ -42,6 +42,21 @@ class ListTest extends FunSpec with Matchers {
     it("Exercice 3.5") {
       List.dropWhile(List("a", "b", "Haskell", "Scala", "Kotlin"), (s: String) => s.length < 7) should be (List("Haskell", "Scala", "Kotlin"))
       List.dropWhile(List("Haskell", "Scala", "a", "b", "Kotlin"), (s: String) => s.length > 5) should be (List("Scala", "a", "b", "Kotlin"))
+    }
+
+    it("Exercice 3.6") {
+      List.init(List(1, 2, 3, 4)) should be (List(1, 2, 3))
+    }
+
+    it("Exercice 3.7") {
+      List.product(List(1, 2, 3, 4)) should be (24.0)
+      List.productFoldRight(List(1, 2, 3, 4)) should be (24.0)
+      // Not possible
+      //List.productFoldRightShortCircuit(List(1, 2, 3, 4)) should be (24.0)
+    }
+
+    it("Exercice 3.9") {
+      List.length(List(1, 2, 3, 4)) should be (4)
     }
   }
 }
