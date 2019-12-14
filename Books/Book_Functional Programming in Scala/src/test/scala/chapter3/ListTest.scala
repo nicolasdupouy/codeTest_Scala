@@ -97,5 +97,13 @@ class ListTest extends FunSpec with Matchers {
     it("Exercice 3.20") {
       List.flatMap(List(1, 2, 3))(i => List(i, i)) should be (List(1, 1, 2, 2, 3, 3))
     }
+
+    it("Exercice 3.22") {
+      List.zipIntLists(List(1, 2, 3), List(4, 5, 6)) should be(List(5, 7, 9))
+    }
+
+    it("Exercice 3.23") {
+      List.zipWith(List(1, 2, 3), List(4, 5, 6))(_ + _) should be(List(5, 7, 9))
+    }
   }
 }
