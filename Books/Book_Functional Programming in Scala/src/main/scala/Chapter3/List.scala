@@ -32,6 +32,12 @@ object List {
   def productFoldRight(nums: List[Double]): Double =
     foldRight(nums, 1.0)(_ * _)
 
+  @annotation.tailrec
+  def foldLeft[A, B](l: List[A], z: B)(f: (B, A) => B): B = l match {
+    case Nil => z
+    case Cons(h, t) => foldLeft(t, f(z, h))(f)
+  }
+
   def tail(l: List[Int]): List[Int] = l match {
     case Nil => throw new MatchError("Empty list has no tail")
     case Cons(_, t) => t
@@ -65,4 +71,41 @@ object List {
 
   def length(l: List[Int]) =
     foldRight(l, 0)((_, acc) => acc + 1)
+
+  def sumFoldLeft(ints: List[Int]): Int =
+    foldLeft(ints, 0)(_ + _)
+
+  def productFoldLeft(nums: List[Double]): Double =
+    foldLeft(nums, 1.0)(_ * _)
+
+  def lengthFoldLeft(l: List[Int]): Int =
+    foldLeft(l, 0)((acc, _) => acc + 1)
+
+  def reverse[A](l: List[A]): List[A] =
+    foldLeft(l, Nil: List[A])((acc, h) => Cons(h, acc))
+
+  def append[A](l1: List[A], l2: List[A]): List[A] =
+    foldRight(l1, l2)(Cons(_, _))
+
+  def concatenates[A](l: List[List[A]]): List[A] =
+    foldLeft(l, Nil: List[A])(append)
+
+  def mapAddOne(l: List[Int]): List[Int] =
+    foldRight(l, Nil: List[Int])((h, t) => Cons(h + 1, t))
+
+  def convertDoubleToString(l: List[Double]): List[String] =
+    foldRight(l, Nil: List[String])((h, t) => Cons(h.toString, t))
+
+  def map[A, B](l: List[A])(f: A => B): List[B] =
+    foldRight(l, Nil: List[B])((h, t) => Cons(f(h), t))
+
+  def filter[A](l: List[A])(f: A => Boolean): List[A] =
+  //foldRight(l, Nil: List[A])((h, t) => if (f(h)) Cons(h, t) else t)
+    flatMap(l)(x => if (f(x)) List(x) else Nil)
+
+  def flatMap[A, B](l: List[A])(f: A => List[B]): List[B] = {
+    concatenates(map(l)(f))
+    // OR
+    //foldRight(l, Nil:List[B])((h, t) => append(f(h), t))
+  }
 }
