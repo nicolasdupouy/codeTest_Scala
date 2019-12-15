@@ -120,4 +120,18 @@ object List {
     case (Nil, _) => Nil
     case (Cons(h1, t1), Cons(h2, t2)) => Cons(f(h1, h2), zipWith(t1, t2)(f))
   }
+
+  @annotation.tailrec
+  def startWith[A](l: List[A], prefix: List[A]): Boolean = (l, prefix) match {
+    case (_, Nil) => true
+    case (Cons(h1, t1), Cons(h2, t2)) if (h1 == h2) => startWith(t1, t2)
+    case _ => false
+  }
+
+  @annotation.tailrec
+  def hasSubSequence[A](l: List[A], subSequence: List[A]): Boolean = l match {
+    case Nil => subSequence == Nil
+    case _ if startWith(l, subSequence) => true
+    case Cons(_, t) => hasSubSequence(t, subSequence)
+  }
 }
