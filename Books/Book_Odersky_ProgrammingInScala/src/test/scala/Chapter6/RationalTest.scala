@@ -34,5 +34,10 @@ class RationalTest extends FunSpec with Matchers {
     it("66/42 is equal to 11/7") {
       new Rational(66, 42) should be(new Rational(11, 7))
     }
+
+    it("2/3 * 2 = 4/3") {
+      val fourThirds = new Rational(4, 3)
+      twoThirds * 2 should be (fourThirds)
+    }
   }
 }
