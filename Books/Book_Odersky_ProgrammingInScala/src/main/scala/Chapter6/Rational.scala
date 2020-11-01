@@ -10,6 +10,11 @@ class Rational(n: Int, d: Int) {
   // Auxiliary constructor
   def this(n: Int) = this(n, 1)
 
+  override def equals(that: Any): Boolean = that match {
+    case that: Rational => this.numerator == that.numerator && this.denominator == that.denominator
+    case _ => false
+  }
+
   override def toString: String = numerator + "/" + denominator
 
   def +(that: Rational): Rational =
@@ -66,6 +71,7 @@ class Rational(n: Int, d: Int) {
   def max(that: Rational): Rational =
     if (this < that) that else this
 
+  @scala.annotation.tailrec
   private def gcd(a: Int, b: Int): Int =
     if (b == 0) a else gcd(b, a % b)
 }
