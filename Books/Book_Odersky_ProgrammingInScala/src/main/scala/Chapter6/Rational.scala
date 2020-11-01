@@ -1,5 +1,9 @@
 package Chapter6
 
+object Rational {
+  implicit def intToRational(x: Int): Rational = new Rational(x)
+}
+
 class Rational(n: Int, d: Int) {
   require(d != 0)
 
